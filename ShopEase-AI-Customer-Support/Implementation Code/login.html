@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEase | Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="login-page">
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Shop<span>Ease</span>
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+            <a href="faq.html">
+                FAQ
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <div class="search-container">
+
+    <input
+        type="text"
+        id="search-input"
+        placeholder="Search products..."
+        onkeyup="if(event.key === 'Enter') globalProductSearch()"
+    >
+
+    <button
+        class="search-btn"
+        type="button"
+        onclick="globalProductSearch()"
+    >
+        🔍
+    </button>
+
+</div>
+
+            <a href="login.html"
+               class="login-btn">
+                Login
+            </a>
+
+            <a href="cart.html"
+               class="cart-btn">
+                🛒
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= LOGIN SECTION ================= -->
+
+    <section class="login-section">
+
+
+        <div class="login-container">
+
+
+            <!-- LOGIN HEADER -->
+
+            <div class="login-header">
+
+                <div class="login-icon">
+                    👤
+                </div>
+
+                <p>
+                    ACCOUNT ACCESS
+                </p>
+
+                <h1>
+                    Welcome Back
+                </h1>
+
+                <p class="login-description">
+                    Login to continue shopping
+                    with ShopEase.
+                </p>
+
+            </div>
+
+
+
+            <!-- LOGIN FORM -->
+
+            <form
+                class="login-form"
+                onsubmit="loginUser(event)">
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="login-email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="login-email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="login-password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="login-password"
+                        placeholder="Enter your password"
+                        required>
+
+                </div>
+
+
+
+                <!-- OPTIONS -->
+
+                <div class="login-options">
+
+                    <label class="remember-me">
+
+                        <input
+                            type="checkbox">
+
+                        Remember me
+
+                    </label>
+
+
+                    <a href="#"
+                       onclick="forgotPassword(event)">
+
+                        Forgot Password?
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-submit">
+
+                    Login →
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- CREATE ACCOUNT -->
+
+            <div class="create-account">
+    <p>
+        Don't have an account?
+        <a href="#" onclick="createAccount(event)">
+            Create Account
+        </a>
+    </p>
+</div>
+
+<!-- REGISTRATION FORM -->
+
+<div id="register-form" style="display: none; margin-top: 30px;">
+
+    <h2>Create Your Account</h2>
+
+    <form onsubmit="registerUser(event)">
+
+        <div class="form-group">
+            <label for="register-name">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="register-name"
+                placeholder="Enter your full name"
+                required>
+        </div>
+
+        <div class="form-group">
+            <label for="register-email">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="register-email"
+                placeholder="Enter your email"
+                required>
+        </div>
+
+        <div class="form-group">
+            <label for="register-password">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="register-password"
+                placeholder="Create a password"
+                required>
+        </div>
+
+        <button type="submit" class="login-submit">
+            Create Account →
+        </button>
+
+    </form>
+
+</div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+
+            <div class="footer-column">
+
+                <div class="logo footer-logo">
+                    Shop<span>Ease</span>
+                </div>
+
+                <p>
+                    Online shopping made simple,
+                    convenient, and enjoyable.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="products.html">
+                    Products
+                </a>
+
+                <a href="orders.html">
+                    Orders
+                </a>
+
+                <a href="faq.html">
+                    FAQ
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Customer Support
+                </h3>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+                <a href="faq.html">
+                    Help Center
+                </a>
+
+                <a href="faq.html">
+                    Return Policy
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    📧 support@shopease.com
+                </p>
+
+                <p>
+                    📞 +91 XXXXX XXXXX
+                </p>
+
+                <p>
+                    📍 India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ShopEase.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+
+    <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/09/06/14/20260906144717-LTFPNIA6.js" defer></script>
+    
+
+</body>
+
+</html>

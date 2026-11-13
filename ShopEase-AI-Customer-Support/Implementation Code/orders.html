@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEase | Orders</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Shop<span>Ease</span>
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="orders.html"
+               class="active">
+                Orders
+            </a>
+
+            <a href="faq.html">
+                FAQ
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <div class="search-container">
+
+    <input
+        type="text"
+        id="search-input"
+        placeholder="Search products..."
+        onkeyup="if(event.key === 'Enter') globalProductSearch()"
+    >
+
+    <button
+        class="search-btn"
+        type="button"
+        onclick="globalProductSearch()"
+    >
+        🔍
+    </button>
+
+</div>
+
+            <a href="login.html"
+               class="login-btn">
+                Login
+            </a>
+
+            <a href="cart.html"
+               class="cart-btn">
+                🛒
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-header">
+
+        <p>
+            ORDER MANAGEMENT
+        </p>
+
+        <h1>
+            My Orders
+        </h1>
+
+        <p class="page-description">
+            Track your orders and view
+            your purchase history.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= ORDERS ================= -->
+
+    <section class="orders-section">
+
+    <div id="orders-container">
+        <p>Loading your orders...</p>
+    </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+
+            <div class="footer-column">
+
+                <div class="logo footer-logo">
+                    Shop<span>Ease</span>
+                </div>
+
+                <p>
+                    Online shopping made simple,
+                    convenient, and enjoyable.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="products.html">
+                    Products
+                </a>
+
+                <a href="orders.html">
+                    Orders
+                </a>
+
+                <a href="faq.html">
+                    FAQ
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Customer Support
+                </h3>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+                <a href="faq.html">
+                    Help Center
+                </a>
+
+                <a href="faq.html">
+                    Return Policy
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    📧 support@shopease.com
+                </p>
+
+                <p>
+                    📞 +91 XXXXX XXXXX
+                </p>
+
+                <p>
+                    📍 India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ShopEase.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+        </footer>
+
+    <script>
+        async function loadOrders() {
+
+            const ordersContainer =
+                document.getElementById("orders-container");
+
+            try {
+
+                const response = await fetch("/api/orders");
+
+                const result = await response.json();
+
+                if (response.status === 401) {
+
+                    ordersContainer.innerHTML = `
+                        <p>Please login to view your orders.</p>
+                    `;
+
+                    return;
+                }
+
+                if (!result.success) {
+
+                    ordersContainer.innerHTML = `
+                        <p>${result.message}</p>
+                    `;
+
+                    return;
+                }
+
+                if (result.orders.length === 0) {
+
+                    ordersContainer.innerHTML = `
+                        <p>You have not placed any orders yet.</p>
+                    `;
+
+                    return;
+                }
+
+                ordersContainer.innerHTML = "";
+
+                result.orders.forEach(order => {
+
+                    let itemsHTML = "";
+
+order.items.forEach(item => {
+
+    let variantHTML = "";
+
+    if (item.color) {
+        variantHTML += `
+            <p>
+                <strong>Color:</strong>
+                ${item.color}
+            </p>
+        `;
+    }
+
+    if (item.size) {
+        variantHTML += `
+            <p>
+                <strong>Size:</strong>
+                ${item.size}
+            </p>
+        `;
+    }
+
+    if (item.storage) {
+        variantHTML += `
+            <p>
+                <strong>Storage:</strong>
+                ${item.storage}
+            </p>
+        `;
+    }
+
+    itemsHTML += `
+        <div class="order-product">
+
+            <div class="order-icon">
+                🛍️
+            </div>
+
+            <div class="order-details">
+
+                <h2>
+                    ${item.product_name}
+                </h2>
+
+                ${variantHTML}
+
+                <p>
+                    Quantity: ${item.quantity}
+                </p>
+
+                <strong>
+                    ₹${Number(item.price).toLocaleString("en-IN")}
+                </strong>
+
+            </div>
+
+        </div>
+    `;
+
+});
+
+                    ordersContainer.innerHTML += `
+
+                        <div class="order-card">
+
+                            <div class="order-top">
+
+                                <div>
+
+                                    <span class="order-label">
+                                        Order ID
+                                    </span>
+
+                                    <h3>
+                                        #SE${String(order.id).padStart(4, "0")}
+                                    </h3>
+
+                                </div>
+
+                                <span class="status ${order.status.toLowerCase().replace(" ", "-")}">
+                                    ${order.status}
+                                </span>
+
+                            </div>
+
+                            ${itemsHTML}
+
+                            <div class="order-date">
+
+                                Ordered on:
+
+                                <strong>
+                                    ${order.created_at}
+                                </strong>
+
+                            </div>
+
+                            <div class="tracking">
+
+                                <div class="tracking-step completed">
+
+                                    <div class="tracking-circle">
+                                        ✓
+                                    </div>
+
+                                    <p>
+                                        Ordered
+                                    </p>
+
+                                </div>
+
+                                <div class="tracking-line">
+                                </div>
+
+                                <div class="tracking-step">
+
+                                    <div class="tracking-circle">
+                                        2
+                                    </div>
+
+                                    <p>
+                                        Shipped
+                                    </p>
+
+                                </div>
+
+                                <div class="tracking-line">
+                                </div>
+
+                                <div class="tracking-step">
+
+                                    <div class="tracking-circle">
+                                        3
+                                    </div>
+
+                                    <p>
+                                        Delivered
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <h3>
+                                Total:
+                                ₹${order.total.toLocaleString("en-IN")}
+                            </h3>
+
+                        </div>
+                    `;
+                });
+
+            } catch (error) {
+
+                console.error("Error loading orders:", error);
+
+                ordersContainer.innerHTML = `
+                    <p>
+                        Unable to load your orders.
+                        Please try again.
+                    </p>
+                `;
+            }
+        }
+
+        loadOrders();
+    </script>
+
+<script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/09/06/14/20260906144717-LTFPNIA6.js" defer></script>
+    
+
+</body>
+
+</html>

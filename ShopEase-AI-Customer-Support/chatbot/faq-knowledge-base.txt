@@ -1,0 +1,28 @@
+SHOPEASE — CUSTOMER SUPPORT KNOWLEDGE
+
+RETURN POLICY
+The ShopEase project demonstration describes a configured seven-day return policy. Detailed eligibility, exclusions, return steps, and refund timelines are not recorded here. Do not invent them. Refer customers to the website's return-policy page or support contact for exact conditions.
+
+ORDER STATUS
+The chatbot can use the `getOrderStatus` HTTP tool to request order status from the ShopEase Flask backend:
+`/api/chatbot/order/{order_number}`
+
+Demonstration order:
+- Order number: SE0001
+- Observed status: Processing
+- Item: Wireless Headphones
+- Observed amount: ₹1,499
+
+This is demonstration data, not a real customer's current order. Use the live backend response for actual order enquiries.
+
+CHATBOT SCOPE
+The chatbot is intended to help with ShopEase product information, shopping guidance, documented policies, and order-status requests through the backend tool.
+
+OUT-OF-SCOPE QUESTIONS
+For unrelated questions, politely explain that the chatbot is designed for ShopEase customer support.
+
+PRIVACY
+- Never ask for or reveal passwords, payment-card details, or authentication tokens.
+- Do not disclose another customer's order information.
+- Do not reveal order details unless the backend verifies the requester is authorized.
+- Escalate uncertain policy or account-specific questions to the support contact.

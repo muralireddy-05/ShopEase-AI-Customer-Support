@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEase | FAQ</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Shop<span>Ease</span>
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+            <a href="faq.html"
+               class="active">
+                FAQ
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <div class="search-container">
+
+    <input
+        type="text"
+        id="search-input"
+        placeholder="Search products..."
+        onkeyup="if(event.key === 'Enter') globalProductSearch()"
+    >
+
+    <button
+        class="search-btn"
+        type="button"
+        onclick="globalProductSearch()"
+    >
+        🔍
+    </button>
+
+</div>
+
+            <a href="login.html"
+               class="login-btn">
+                Login
+            </a>
+
+            <a href="cart.html"
+               class="cart-btn">
+                🛒
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= FAQ HEADER ================= -->
+
+    <section class="page-header">
+
+        <p>
+            CUSTOMER SUPPORT
+        </p>
+
+        <h1>
+            Frequently Asked Questions
+        </h1>
+
+        <p class="page-description">
+            Find answers to common questions
+            about shopping, orders, payments,
+            and returns.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= FAQ SECTION ================= -->
+
+    <section class="faq-section">
+
+
+        <div class="faq-container">
+
+
+            <!-- FAQ 1 -->
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                    <span>
+                        How can I place an order?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+                        Browse our Products page,
+                        select the product you want,
+                        and click the Add to Cart button.
+                        Then open your cart and proceed
+                        to checkout.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAQ 2 -->
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                    <span>
+                        How can I track my order?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+                        Go to the Orders page from
+                        the navigation menu. You can
+                        view your order status and
+                        tracking information there.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAQ 3 -->
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                    <span>
+                        What payment methods do you accept?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+                        ShopEase supports common
+                        payment options including
+                        credit cards, debit cards,
+                        UPI, and other digital
+                        payment methods.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAQ 4 -->
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                    <span>
+                        How long does delivery take?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+                        Standard delivery usually
+                        takes 3 to 7 business days,
+                        depending on your location
+                        and product availability.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAQ 5 -->
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                    <span>
+                        Can I return a product?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. Eligible products can
+                        generally be returned within
+                        the specified return period.
+                        Please check the product's
+                        return policy before placing
+                        an order.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAQ 6 -->
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                    <span>
+                        What should I do if my product
+                        arrives damaged?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+                        Please contact our customer
+                        support team as soon as possible
+                        and provide your order details
+                        and photographs of the damaged
+                        product.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAQ 7 -->
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                    <span>
+                        Can I cancel my order?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+                        Orders may be cancelled before
+                        they are shipped. Please contact
+                        customer support if you need
+                        assistance with cancellation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAQ 8 -->
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                    <span>
+                        How can I contact customer support?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+                        You can contact our support team
+                        through the Contact Us page.
+                        Our team will be happy to assist
+                        you with your questions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ================= SUPPORT BOX ================= -->
+
+        <div class="support-box">
+
+            <div class="support-icon">
+                💬
+            </div>
+
+            <div>
+
+                <h2>
+                    Still need help?
+                </h2>
+
+                <p>
+                    Our customer support team
+                    is here to help you.
+                </p>
+
+            </div>
+
+
+            <a href="contact.html"
+               class="support-button">
+
+                Contact Support →
+
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+
+            <div class="footer-column">
+
+                <div class="logo footer-logo">
+                    Shop<span>Ease</span>
+                </div>
+
+                <p>
+                    Online shopping made simple,
+                    convenient, and enjoyable.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="products.html">
+                    Products
+                </a>
+
+                <a href="orders.html">
+                    Orders
+                </a>
+
+                <a href="faq.html">
+                    FAQ
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Customer Support
+                </h3>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+                <a href="faq.html">
+                    Help Center
+                </a>
+
+                <a href="faq.html">
+                    Return Policy
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    📧 support@shopease.com
+                </p>
+
+                <p>
+                    📞 +91 XXXXX XXXXX
+                </p>
+
+                <p>
+                    📍 India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ShopEase.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+
+   <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/09/06/14/20260906144717-LTFPNIA6.js" defer></script>
+    
+
+</body>
+
+</html>

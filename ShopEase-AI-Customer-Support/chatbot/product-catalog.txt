@@ -1,0 +1,25 @@
+SHOPEASE — PRODUCT KNOWLEDGE
+
+IMPORTANT: This file contains only product facts confirmed in the project demonstration. It is NOT the complete 28-item catalogue. Extend it using the actual ShopEase product catalogue before using it as a complete source.
+
+PRODUCT: iPhone 16
+Demonstration price: ₹69,999
+Demonstrated storage options: 128GB, 256GB
+
+PRODUCT: Samsung Galaxy S25
+Demonstration price: ₹74,999
+Demonstrated storage options: 128GB, 256GB
+
+PRODUCT: OnePlus 13
+Demonstrated colours: Black, Blue, White
+Price: Not recorded in the confirmed demonstration notes.
+
+PRODUCT: Wireless Headphones
+Demonstration order-line amount: ₹1,499
+This is an example from the order demonstration. Verify the live product listing before quoting price or availability.
+
+CHATBOT GUIDANCE
+- Use only product details in the current, verified catalogue.
+- Do not invent prices, stock status, specifications, delivery dates, or discounts.
+- If a detail is missing, say it needs confirmation from the website/support team.
+- Ask which product or variant the customer means when unclear.

@@ -1,0 +1,203 @@
+SHOPEASE PRODUCT CATALOG
+
+ShopEase is an online shopping website. The following products are currently available in the ShopEase product catalog.
+
+==============================
+MOBILE PHONES
+==============================
+
+1. iPhone 16
+Category: Mobile Phones
+Base Price: ₹69,999
+Available Colors: Black, Blue, Pink
+Available Storage: 128GB, 256GB
+
+2. Samsung Galaxy S25
+Category: Mobile Phones
+Base Price: ₹74,999
+Available Colors: Black, Blue, Silver
+Available Storage: 128GB, 256GB
+
+3. OnePlus 13
+Category: Mobile Phones
+Base Price: ₹64,999
+Available Colors: Black, Blue, White
+Available Storage: 128GB, 256GB
+
+
+==============================
+ELECTRONICS
+==============================
+
+4. Wireless Headphones
+Category: Electronics
+Price: ₹1,499
+
+5. Smart Watch
+Category: Electronics
+Price: ₹1,999
+
+6. Bluetooth Speaker
+Category: Electronics
+Price: ₹1,299
+
+7. Wireless Mouse
+Category: Electronics
+Price: ₹699
+
+8. Smart LED TV 43 inch
+Category: Electronics
+Price: ₹29,999
+
+9. Wireless Earbuds Pro
+Category: Electronics
+Price: ₹2,499
+
+10. Gaming Keyboard
+Category: Electronics
+Price: ₹1,799
+
+11. Power Bank 20000mAh
+Category: Electronics
+Price: ₹1,499
+
+12. Tablet 10 inch
+Category: Electronics
+Price: ₹12,999
+
+
+==============================
+FASHION
+==============================
+
+13. Premium T-Shirt
+Category: Fashion
+Price: ₹799
+Available Colors: Black, White, Blue, Red
+Available Sizes: S, M, L, XL
+
+14. Running Shoes
+Category: Fashion
+Price: ₹2,499
+
+15. Casual Shirt
+Category: Fashion
+Price: ₹1,299
+Available Colors: Black, White, Navy Blue
+Available Sizes: M, L, XL, XXL
+
+16. Slim Fit Jeans
+Category: Fashion
+Price: ₹1,799
+Available Colors: Black, Blue, Dark Blue
+Available Sizes: 30, 32, 34, 36
+
+17. Hoodie
+Category: Fashion
+Price: ₹1,499
+Available Colors: Black, Grey, Blue
+Available Sizes: S, M, L, XL
+
+
+==============================
+WATCHES
+==============================
+
+18. Smart Watch Pro
+Category: Watches
+Price: ₹2,999
+Available Colors: Black, Silver, Rose Gold
+
+19. Classic Analog Watch
+Category: Watches
+Price: ₹1,999
+Available Colors: Black, Silver, Gold
+
+
+==============================
+FOOTWEAR
+==============================
+
+20. Casual Sneakers
+Category: Footwear
+Price: ₹2,199
+Available Colors: Black, White, Grey
+Available Sizes: 7, 8, 9, 10, 11
+
+
+==============================
+HOME ACCESSORIES
+==============================
+
+21. Smart LED Table Lamp
+Category: Home Accessories
+Price: ₹999
+
+22. Wall Clock
+Category: Home Accessories
+Price: ₹699
+
+23. Storage Organizer
+Category: Home Accessories
+Price: ₹599
+
+24. Cushion Set
+Category: Home Accessories
+Price: ₹899
+
+25. Desk Organizer
+Category: Home Accessories
+Price: ₹499
+
+
+==============================
+BEAUTY
+==============================
+
+26. Skin Care Set
+Category: Beauty
+Price: ₹1,199
+
+
+==============================
+ACCESSORIES
+==============================
+
+27. Urban Backpack
+Category: Accessories
+Price: ₹999
+
+28. Stainless Steel Water Bottle
+Category: Accessories
+Price: ₹699
+
+
+==============================
+CUSTOMER SUPPORT INFORMATION
+==============================
+
+ShopEase is an online shopping platform.
+
+Customers can ask the ShopEase AI Customer Support Assistant about:
+- Product names
+- Product prices
+- Product categories
+- Available colors
+- Available sizes
+- Available storage options
+- Orders
+- Order status
+- Delivery
+- Payments
+- Returns
+- Cancellations
+- Damaged products
+- ShopEase FAQs
+
+For order status, the customer should provide their ShopEase order number, such as SE0001.
+
+The ShopEase order status system can look up an order using the order number.
+
+The AI assistant must not invent product information, prices, order information, or policies.
+
+If information is not available in the ShopEase knowledge sources, the assistant should say that it cannot find the requested information rather than making up an answer.

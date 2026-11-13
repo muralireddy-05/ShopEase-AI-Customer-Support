@@ -1,0 +1,48 @@
+SHOPEASE PRODUCT CATALOGUE
+==========================
+
+Currency: Indian Rupees (INR). Prices below are the project catalogue values
+recorded during development. Confirm against the live application database
+before relying on them for a real transaction.
+
+1. Wireless Headphones | Category: Electronics | Price: ₹1,499
+2. Smart Watch | Category: Electronics | Price: ₹1,999
+3. Bluetooth Speaker | Category: Electronics | Price: ₹1,299
+4. Wireless Mouse | Category: Electronics | Price: ₹699
+5. Running Shoes | Category: Fashion | Price: ₹2,499
+6. Premium T-Shirt | Category: Fashion | Price: ₹799
+7. Skin Care Set | Category: Beauty | Price: ₹1,199
+8. Urban Backpack | Category: Accessories | Price: ₹999
+9. iPhone 16 | Category: Mobile Phones | Price: ₹69,999
+   Storage options: 128GB, 256GB
+   Colors recorded in chatbot testing: Black, Blue, Pink
+10. Samsung Galaxy S25 | Category: Mobile Phones | Price: ₹74,999
+   Storage options: 128GB, 256GB
+11. OnePlus 13 | Category: Mobile Phones | Price: ₹64,999
+   Colors recorded in chatbot testing: Black, Blue, White
+12. Smart LED TV 43 inch | Category: Electronics | Price: ₹29,999
+13. Wireless Earbuds Pro | Category: Electronics | Price: ₹2,499
+14. Gaming Keyboard | Category: Electronics | Price: ₹1,799
+15. Power Bank 20000mAh | Category: Electronics | Price: ₹1,499
+16. Tablet 10 inch | Category: Electronics | Price: ₹12,999
+17. Casual Shirt | Category: Fashion | Price: ₹1,299
+18. Slim Fit Jeans | Category: Fashion | Price: ₹1,799
+19. Hoodie | Category: Fashion | Price: ₹1,499
+20. Smart Watch Pro | Category: Watches | Price: ₹2,999
+21. Classic Analog Watch | Category: Watches | Price: ₹1,999
+22. Casual Sneakers | Category: Footwear | Price: ₹2,199
+23. Smart LED Table Lamp | Category: Home Accessories | Price: ₹999
+24. Wall Clock | Category: Home Accessories | Price: ₹699
+25. Storage Organizer | Category: Home Accessories | Price: ₹599
+26. Cushion Set | Category: Home Accessories | Price: ₹899
+27. Desk Organizer | Category: Home Accessories | Price: ₹499
+28. Stainless Steel Water Bottle | Category: Accessories | Price: ₹699
+
+CHATBOT TESTING NOTES
+---------------------
+During the documented chatbot tests, the assistant returned:
+- iPhone 16: ₹69,999; 128GB and 256GB options; Black, Blue and Pink.
+- Samsung Galaxy S25: ₹74,999; 128GB and 256GB options.
+- OnePlus 13: ₹64,999; Black, Blue and White.
+These option details were recorded from chatbot test responses. Verify them
+against the final product database before treating them as authoritative.

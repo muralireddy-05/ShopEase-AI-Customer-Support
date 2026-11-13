@@ -1,0 +1,216 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "category": "Electronics",
+    "price_inr": 1499,
+    "icon": "🎧"
+  },
+  {
+    "id": 2,
+    "name": "Smart Watch",
+    "category": "Electronics",
+    "price_inr": 1999,
+    "icon": "⌚"
+  },
+  {
+    "id": 3,
+    "name": "Bluetooth Speaker",
+    "category": "Electronics",
+    "price_inr": 1299,
+    "icon": "🔊"
+  },
+  {
+    "id": 4,
+    "name": "Wireless Mouse",
+    "category": "Electronics",
+    "price_inr": 699,
+    "icon": "🖱️"
+  },
+  {
+    "id": 5,
+    "name": "Running Shoes",
+    "category": "Fashion",
+    "price_inr": 2499,
+    "icon": "👟"
+  },
+  {
+    "id": 6,
+    "name": "Premium T-Shirt",
+    "category": "Fashion",
+    "price_inr": 799,
+    "icon": "👕"
+  },
+  {
+    "id": 7,
+    "name": "Skin Care Set",
+    "category": "Beauty",
+    "price_inr": 1199,
+    "icon": "🧴"
+  },
+  {
+    "id": 8,
+    "name": "Urban Backpack",
+    "category": "Accessories",
+    "price_inr": 999,
+    "icon": "🎒"
+  },
+  {
+    "id": 9,
+    "name": "iPhone 16",
+    "category": "Mobile Phones",
+    "price_inr": 69999,
+    "icon": "📱",
+    "storage_options": [
+      "128GB",
+      "256GB"
+    ],
+    "colors": [
+      "Black",
+      "Blue",
+      "Pink"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Samsung Galaxy S25",
+    "category": "Mobile Phones",
+    "price_inr": 74999,
+    "icon": "📱",
+    "storage_options": [
+      "128GB",
+      "256GB"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "OnePlus 13",
+    "category": "Mobile Phones",
+    "price_inr": 64999,
+    "icon": "📱",
+    "colors": [
+      "Black",
+      "Blue",
+      "White"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Smart LED TV 43 inch",
+    "category": "Electronics",
+    "price_inr": 29999,
+    "icon": "📺"
+  },
+  {
+    "id": 13,
+    "name": "Wireless Earbuds Pro",
+    "category": "Electronics",
+    "price_inr": 2499,
+    "icon": "🎧"
+  },
+  {
+    "id": 14,
+    "name": "Gaming Keyboard",
+    "category": "Electronics",
+    "price_inr": 1799,
+    "icon": "⌨️"
+  },
+  {
+    "id": 15,
+    "name": "Power Bank 20000mAh",
+    "category": "Electronics",
+    "price_inr": 1499,
+    "icon": "🔋"
+  },
+  {
+    "id": 16,
+    "name": "Tablet 10 inch",
+    "category": "Electronics",
+    "price_inr": 12999,
+    "icon": "📱"
+  },
+  {
+    "id": 17,
+    "name": "Casual Shirt",
+    "category": "Fashion",
+    "price_inr": 1299,
+    "icon": "👔"
+  },
+  {
+    "id": 18,
+    "name": "Slim Fit Jeans",
+    "category": "Fashion",
+    "price_inr": 1799,
+    "icon": "👖"
+  },
+  {
+    "id": 19,
+    "name": "Hoodie",
+    "category": "Fashion",
+    "price_inr": 1499,
+    "icon": "🧥"
+  },
+  {
+    "id": 20,
+    "name": "Smart Watch Pro",
+    "category": "Watches",
+    "price_inr": 2999,
+    "icon": "⌚"
+  },
+  {
+    "id": 21,
+    "name": "Classic Analog Watch",
+    "category": "Watches",
+    "price_inr": 1999,
+    "icon": "⌚"
+  },
+  {
+    "id": 22,
+    "name": "Casual Sneakers",
+    "category": "Footwear",
+    "price_inr": 2199,
+    "icon": "👟"
+  },
+  {
+    "id": 23,
+    "name": "Smart LED Table Lamp",
+    "category": "Home Accessories",
+    "price_inr": 999,
+    "icon": "💡"
+  },
+  {
+    "id": 24,
+    "name": "Wall Clock",
+    "category": "Home Accessories",
+    "price_inr": 699,
+    "icon": "🕐"
+  },
+  {
+    "id": 25,
+    "name": "Storage Organizer",
+    "category": "Home Accessories",
+    "price_inr": 599,
+    "icon": "🗄️"
+  },
+  {
+    "id": 26,
+    "name": "Cushion Set",
+    "category": "Home Accessories",
+    "price_inr": 899,
+    "icon": "🛋️"
+  },
+  {
+    "id": 27,
+    "name": "Desk Organizer",
+    "category": "Home Accessories",
+    "price_inr": 499,
+    "icon": "📦"
+  },
+  {
+    "id": 28,
+    "name": "Stainless Steel Water Bottle",
+    "category": "Accessories",
+    "price_inr": 699,
+    "icon": "🥤"
+  }
+]

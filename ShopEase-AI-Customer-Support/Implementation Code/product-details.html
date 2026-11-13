@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEase | Product Details</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .product-details-page {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 30px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #4f46e5;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .product-details-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        .details-image {
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f3f4f8;
+            border-radius: 12px;
+            font-size: 150px;
+        }
+
+        .details-category {
+            color: #777;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .details-title {
+            font-size: 38px;
+            margin: 0 0 15px;
+        }
+
+        .details-rating {
+            color: #f59e0b;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .details-price {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .details-description {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .option-section {
+            margin: 22px 0;
+        }
+
+        .option-section label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .option-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .option-btn {
+            padding: 10px 18px;
+            border: 1px solid #ccc;
+            background: white;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .option-btn:hover {
+            border-color: #4f46e5;
+        }
+
+        .option-btn.selected {
+            background: #4f46e5;
+            color: white;
+            border-color: #4f46e5;
+        }
+
+        .stock-status {
+            color: #16803c;
+            font-weight: 600;
+            margin: 18px 0;
+        }
+
+        .quantity-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .quantity-section button {
+            width: 35px;
+            height: 35px;
+            border: 1px solid #ccc;
+            background: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .quantity-value {
+            min-width: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .add-cart-details {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #111827;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .add-cart-details:hover {
+            background: #4f46e5;
+        }
+
+        .loading-message {
+            text-align: center;
+            font-size: 20px;
+            padding: 80px;
+        }
+
+        @media (max-width: 768px) {
+
+            .product-details-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .details-title {
+                font-size: 28px;
+            }
+
+            .details-image {
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Shop<span>Ease</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html" class="active">Products</a>
+            <a href="orders.html">Orders</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <button class="search-btn">
+                🔍
+            </button>
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+            <a href="cart.html" class="cart-btn">
+                🛒
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= PRODUCT DETAILS ================= -->
+
+    <main class="product-details-page">
+
+        <a href="products.html" class="back-link">
+            ← Back to Products
+        </a>
+
+        <div id="product-details">
+
+            <p class="loading-message">
+                Loading product...
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        let product = null;
+        let variants = [];
+
+        let selectedColor = null;
+        let selectedSize = null;
+        let selectedStorage = null;
+
+        let quantity = 1;
+
+
+        /* ==========================================
+           GET PRODUCT ID FROM URL
+        ========================================== */
+
+        const urlParams =
+            new URLSearchParams(window.location.search);
+
+        const productId =
+            urlParams.get("id");
+
+
+        /* ==========================================
+           LOAD PRODUCT
+        ========================================== */
+
+        async function loadProduct() {
+
+            try {
+
+                const response =
+                    await fetch("/api/products");
+
+                const products =
+                    await response.json();
+
+                product =
+                    products.find(
+                        item =>
+                            Number(item.id) ===
+                            Number(productId)
+                    );
+
+
+                if (!product) {
+
+                    document.getElementById(
+                        "product-details"
+                    ).innerHTML = `
+                        <p class="loading-message">
+                            Product not found.
+                        </p>
+                    `;
+
+                    return;
+                }
+
+
+                await loadVariants();
+
+            } catch (error) {
+
+                console.error(
+                    "Product loading error:",
+                    error
+                );
+
+            }
+
+        }
+
+
+        /* ==========================================
+           LOAD VARIANTS
+        ========================================== */
+
+        async function loadVariants() {
+
+            try {
+
+                const response =
+                    await fetch(
+                        `/api/products/${product.id}/variants`
+                    );
+
+                variants =
+                    await response.json();
+
+                displayProduct();
+
+            } catch (error) {
+
+                console.error(
+                    "Variant loading error:",
+                    error
+                );
+
+            }
+
+        }
+
+
+        /* ==========================================
+           DISPLAY PRODUCT
+        ========================================== */
+
+        function displayProduct() {
+
+            const container =
+                document.getElementById(
+                    "product-details"
+                );
+
+
+            const colors = [
+                ...new Set(
+                    variants
+                        .map(item => item.color)
+                        .filter(Boolean)
+                )
+            ];
+
+
+            const sizes = [
+                ...new Set(
+                    variants
+                        .map(item => item.size)
+                        .filter(Boolean)
+                )
+            ];
+
+
+            const storages = [
+                ...new Set(
+                    variants
+                        .map(item => item.storage)
+                        .filter(Boolean)
+                )
+            ];
+
+
+            container.innerHTML = `
+
+                <div class="product-details-container">
+
+                    <div class="details-image">
+                        ${product.icon}
+                    </div>
+
+
+                    <div class="details-info">
+
+                        <p class="details-category">
+                            ${product.category}
+                        </p>
+
+                        <h1 class="details-title">
+                            ${product.name}
+                        </h1>
+
+                        <div class="details-rating">
+                            ★★★★★
+                            <span style="color:#777;">
+                                (New)
+                            </span>
+                        </div>
+
+                        <div
+                            class="details-price"
+                            id="product-price"
+                        >
+                            ₹${Number(product.price)
+                                .toLocaleString("en-IN")}
+                        </div>
+
+
+                        <p class="details-description">
+
+                            ShopEase ${product.name} is a
+                            quality ${product.category.toLowerCase()}
+                            product available for online purchase.
+
+                            Select your preferred options
+                            before adding the product to your cart.
+
+                        </p>
+
+
+                        <!-- COLOR -->
+
+                        ${
+                            colors.length > 0
+                            ?
+                            `
+                            <div class="option-section">
+
+                                <label>
+                                    Color
+                                </label>
+
+                                <div class="option-buttons">
+
+                                    ${
+                                        colors.map(
+                                            (color, index) => `
+                                                <button
+                                                    class="option-btn color-option ${index === 0 ? "selected" : ""}"
+                                                    onclick="selectColor(this, '${color}')"
+                                                >
+                                                    ${color}
+                                                </button>
+                                            `
+                                        ).join("")
+                                    }
+
+                                </div>
+
+                            </div>
+                            `
+                            :
+                            ""
+                        }
+
+
+                        <!-- SIZE -->
+
+                        ${
+                            sizes.length > 0
+                            ?
+                            `
+                            <div class="option-section">
+
+                                <label>
+                                    Size
+                                </label>
+
+                                <div class="option-buttons">
+
+                                    ${
+                                        sizes.map(
+                                            (size, index) => `
+                                                <button
+                                                    class="option-btn size-option ${index === 0 ? "selected" : ""}"
+                                                    onclick="selectSize(this, '${size}')"
+                                                >
+                                                    ${size}
+                                                </button>
+                                            `
+                                        ).join("")
+                                    }
+
+                                </div>
+
+                            </div>
+                            `
+                            :
+                            ""
+                        }
+
+
+                        <!-- STORAGE -->
+
+                        ${
+                            storages.length > 0
+                            ?
+                            `
+                            <div class="option-section">
+
+                                <label>
+                                    Storage
+                                </label>
+
+                                <div class="option-buttons">
+
+                                    ${
+                                        storages.map(
+                                            (storage, index) => `
+                                                <button
+                                                    class="option-btn storage-option ${index === 0 ? "selected" : ""}"
+                                                    onclick="selectStorage(this, '${storage}')"
+                                                >
+                                                    ${storage}
+                                                </button>
+                                            `
+                                        ).join("")
+                                    }
+
+                                </div>
+
+                            </div>
+                            `
+                            :
+                            ""
+                        }
+
+
+                        <div
+                            class="stock-status"
+                            id="stock-status"
+                        >
+                            ✓ In Stock
+                        </div>
+
+
+                        <!-- QUANTITY -->
+
+                        <div class="quantity-section">
+
+                            <strong>
+                                Quantity:
+                            </strong>
+
+                            <button
+                                onclick="changeQuantity(-1)"
+                            >
+                                −
+                            </button>
+
+                            <span
+                                class="quantity-value"
+                                id="quantity"
+                            >
+                                1
+                            </span>
+
+                            <button
+                                onclick="changeQuantity(1)"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+
+                        <button
+                            class="add-cart-details"
+                            onclick="addToCartFromDetails()"
+                        >
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+            `;
+
+
+            /* Select first available options */
+
+            if (colors.length > 0) {
+                selectedColor = colors[0];
+            }
+
+            if (sizes.length > 0) {
+                selectedSize = sizes[0];
+            }
+
+            if (storages.length > 0) {
+                selectedStorage = storages[0];
+            }
+
+
+            updateVariantPrice();
+
+        }
+
+
+        /* ==========================================
+           COLOR
+        ========================================== */
+
+        function selectColor(button, color) {
+
+            document
+                .querySelectorAll(".color-option")
+                .forEach(btn =>
+                    btn.classList.remove("selected")
+                );
+
+            button.classList.add("selected");
+
+            selectedColor = color;
+
+            updateVariantPrice();
+
+        }
+
+
+        /* ==========================================
+           SIZE
+        ========================================== */
+
+        function selectSize(button, size) {
+
+            document
+                .querySelectorAll(".size-option")
+                .forEach(btn =>
+                    btn.classList.remove("selected")
+                );
+
+            button.classList.add("selected");
+
+            selectedSize = size;
+
+            updateVariantPrice();
+
+        }
+
+
+        /* ==========================================
+           STORAGE
+        ========================================== */
+
+        function selectStorage(button, storage) {
+
+            document
+                .querySelectorAll(".storage-option")
+                .forEach(btn =>
+                    btn.classList.remove("selected")
+                );
+
+            button.classList.add("selected");
+
+            selectedStorage = storage;
+
+            updateVariantPrice();
+
+        }
+
+
+        /* ==========================================
+           FIND VARIANT
+        ========================================== */
+
+        function getSelectedVariant() {
+
+            return variants.find(variant => {
+
+                return (
+
+                    (!selectedColor ||
+                        variant.color === selectedColor)
+
+                    &&
+
+                    (!selectedSize ||
+                        variant.size === selectedSize)
+
+                    &&
+
+                    (!selectedStorage ||
+                        variant.storage === selectedStorage)
+
+                );
+
+            });
+
+        }
+
+
+        /* ==========================================
+           UPDATE PRICE
+        ========================================== */
+
+        function updateVariantPrice() {
+
+            const variant =
+                getSelectedVariant();
+
+
+            if (!variant) {
+                return;
+            }
+
+
+            document.getElementById(
+                "product-price"
+            ).textContent =
+                `₹${Number(variant.price)
+                    .toLocaleString("en-IN")}`;
+
+
+            document.getElementById(
+                "stock-status"
+            ).textContent =
+                variant.stock > 0
+                    ? `✓ In Stock (${variant.stock} available)`
+                    : "✕ Out of Stock";
+
+        }
+
+
+        /* ==========================================
+           QUANTITY
+        ========================================== */
+
+        function changeQuantity(change) {
+
+            quantity += change;
+
+            if (quantity < 1) {
+                quantity = 1;
+            }
+
+
+            const variant =
+                getSelectedVariant();
+
+
+            if (
+                variant &&
+                quantity > variant.stock
+            ) {
+                quantity = variant.stock;
+            }
+
+
+            document.getElementById(
+                "quantity"
+            ).textContent = quantity;
+
+        }
+
+
+        /* ==========================================
+           ADD TO CART
+        ========================================== */
+
+        function addToCartFromDetails() {
+
+            const variant =
+                getSelectedVariant();
+
+
+            if (variants.length > 0 && !variant) {
+
+                alert(
+                    "Please select a valid product variant."
+                );
+
+                return;
+
+            }
+
+
+            const cart =
+                JSON.parse(
+                    localStorage.getItem("cart")
+                ) || [];
+
+
+            if (variant) {
+
+                cart.push({
+
+                    product_id:
+                        Number(product.id),
+
+                    product_name:
+                        product.name,
+
+                    variant_id:
+                        variant.id,
+
+                    color:
+                        variant.color || null,
+
+                    size:
+                        variant.size || null,
+
+                    storage:
+                        variant.storage || null,
+
+                    price:
+                        Number(variant.price),
+
+                    quantity:
+                        quantity
+
+                });
+
+            } else {
+
+                cart.push({
+
+                    product_id:
+                        Number(product.id),
+
+                    product_name:
+                        product.name,
+
+                    price:
+                        Number(product.price),
+
+                    quantity:
+                        quantity
+
+                });
+
+            }
+
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+
+            alert(
+                `${product.name} has been added to your cart! 🛒`
+            );
+
+        }
+
+
+        /* ==========================================
+           START
+        ========================================== */
+
+        loadProduct();
+
+    </script>
+
+
+    <!-- SHOP EASE SCRIPT -->
+
+    <script src="script.js"></script>
+
+
+    <!-- BOTPRESS -->
+
+    <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/09/06/14/20260906144717-LTFPNIA6.js" defer></script>
+
+</body>
+
+</html>

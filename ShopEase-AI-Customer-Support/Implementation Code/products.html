@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEase | Products</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Shop<span>Ease</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html" class="active">Products</a>
+            <a href="orders.html">Orders</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <div class="search-container">
+
+    <input
+        type="text"
+        id="search-input"
+        placeholder="Search products..."
+        onkeyup="searchProducts()"
+    >
+
+    <button
+        class="search-btn"
+        type="button"
+        onclick="searchProducts()"
+    >
+        🔍
+    </button>
+
+</div>
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+            <a href="cart.html" class="cart-btn">
+                🛒
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-header">
+
+        <p>SHOP COLLECTION</p>
+
+        <h1>Our Products</h1>
+
+        <p class="page-description">
+            Explore our collection of quality products
+            at prices you'll love.
+        </p>
+
+    </section>
+
+
+    <!-- ================= CATEGORY FILTER ================= -->
+
+    <!-- ================= CATEGORY FILTER ================= -->
+
+<div class="category-filter">
+
+    <button class="filter-btn active"
+            onclick="filterProducts('All')">
+        All Products
+    </button>
+
+    <button class="filter-btn"
+            onclick="filterProducts('Electronics')">
+        Electronics
+    </button>
+
+    <button class="filter-btn"
+            onclick="filterProducts('Mobile Phones')">
+        Mobile Phones
+    </button>
+
+    <button class="filter-btn"
+            onclick="filterProducts('Fashion')">
+        Fashion
+    </button>
+
+    <button class="filter-btn"
+            onclick="filterProducts('Watches')">
+        Watches
+    </button>
+
+    <button class="filter-btn"
+            onclick="filterProducts('Footwear')">
+        Footwear
+    </button>
+
+    <button class="filter-btn"
+            onclick="filterProducts('Home Accessories')">
+        Home Accessories
+    </button>
+
+    <button class="filter-btn"
+            onclick="filterProducts('Beauty')">
+        Beauty
+    </button>
+
+    <button class="filter-btn"
+            onclick="filterProducts('Accessories')">
+        Accessories
+    </button>
+
+</div>
+
+        <!-- ================= PRODUCTS ================= -->
+
+        <div class="all-products">
+
+
+            <!-- Product 1 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    🎧
+
+                    <span class="product-tag">
+                        NEW
+                    </span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Electronics
+                    </p>
+
+                    <h3>
+                        Wireless Headphones
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>(124)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹1,499
+                    </div>
+
+                    <button onclick="addToCart('Wireless Headphones')">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 2 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    ⌚
+
+                    <span class="product-tag">
+                        SALE
+                    </span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Electronics
+                    </p>
+
+                    <h3>
+                        Smart Watch
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>(98)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹1,999
+                    </div>
+
+                    <button onclick="addToCart('Smart Watch')">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 3 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    🔊
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Electronics
+                    </p>
+
+                    <h3>
+                        Bluetooth Speaker
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★☆
+                        <span>(86)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹1,299
+                    </div>
+
+                    <button onclick="addToCart('Bluetooth Speaker')">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 4 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    🖱️
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Electronics
+                    </p>
+
+                    <h3>
+                        Wireless Mouse
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>(72)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹699
+                    </div>
+
+                    <button onclick="addToCart('Wireless Mouse')">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 5 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    👟
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Fashion
+                    </p>
+
+                    <h3>
+                        Running Shoes
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>(76)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹2,499
+                    </div>
+
+                    <button onclick="addToCart('Running Shoes')">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 6 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    👕
+                    
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Fashion
+                    </p>
+
+                    <h3>
+                        Premium T-Shirt
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★☆
+                        <span>(54)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹799
+                    </div>
+
+                    <button onclick="addToCart('Premium T-Shirt')">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 7 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    🧴
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Beauty
+                    </p>
+
+                    <h3>
+                        Skin Care Set
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>(91)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹1,199
+                    </div>
+
+                    <button onclick="addToCart('Skin Care Set')">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 8 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    🎒
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Accessories
+                    </p>
+
+                    <h3>
+                        Urban Backpack
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>(63)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹999
+                    </div>
+
+                    <button onclick="addToCart('Urban Backpack')">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-column">
+
+                <div class="logo footer-logo">
+                    Shop<span>Ease</span>
+                </div>
+
+                <p>
+                    Online shopping made simple,
+                    convenient, and enjoyable.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="orders.html">Orders</a>
+                <a href="faq.html">FAQ</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Customer Support</h3>
+
+                <a href="contact.html">Contact Us</a>
+                <a href="faq.html">Help Center</a>
+                <a href="faq.html">Return Policy</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <p>📧 support@shopease.com</p>
+                <p>📞 +91 XXXXX XXXXX</p>
+                <p>📍 India</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ShopEase. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+let allProducts = [];
+
+
+/* ==========================================
+   DISPLAY PRODUCTS
+========================================== */
+
+function displayProducts(products) {
+
+    const productContainer =
+        document.querySelector('.all-products');
+
+    productContainer.innerHTML = '';
+
+    products.forEach(product => {
+
+        const productCard =
+            document.createElement('div');
+
+        productCard.className = 'product-card';
+
+        productCard.style.cursor = 'pointer';
+
+        productCard.innerHTML = `
+
+            <div class="product-image">
+                ${product.icon}
+            </div>
+
+            <div class="product-info">
+
+                <p class="product-category">
+                    ${product.category}
+                </p>
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+                <div class="rating">
+                    ★★★★★
+                    <span>(New)</span>
+                </div>
+
+                <div class="price">
+                    ₹${Number(product.price).toLocaleString('en-IN')}
+                </div>
+
+                <button
+                    type="button"
+                    onclick="event.stopPropagation(); viewProduct(${product.id})"
+                >
+                    View Details
+                </button>
+
+            </div>
+        `;
+
+
+        /* Click anywhere on the card */
+
+        productCard.addEventListener(
+            'click',
+            function () {
+
+                viewProduct(product.id);
+
+            }
+        );
+
+
+        productContainer.appendChild(productCard);
+
+    });
+}
+
+
+/* ==========================================
+   OPEN PRODUCT DETAILS
+========================================== */
+
+function viewProduct(productId) {
+
+    window.location.href =
+        `product-details.html?id=${productId}`;
+
+}
+
+
+/* ==========================================
+   FILTER PRODUCTS
+========================================== */
+
+function filterProducts(category) {
+
+    document
+        .querySelectorAll('.filter-btn')
+        .forEach(button => {
+
+            button.classList.remove('active');
+
+        });
+
+
+    event.target.classList.add('active');
+
+
+    if (category === 'All') {
+
+        displayProducts(allProducts);
+
+    } else {
+
+        const filteredProducts =
+            allProducts.filter(
+                product =>
+                    product.category === category
+            );
+
+        displayProducts(filteredProducts);
+
+    }
+
+}
+
+/* ==========================================
+   SEARCH PRODUCTS
+========================================== */
+
+function searchProducts() {
+
+    const searchInput =
+        document.getElementById("search-input");
+
+    const searchText =
+        searchInput.value.toLowerCase().trim();
+
+    if (searchText === "") {
+
+        displayProducts(allProducts);
+
+        return;
+    }
+
+    const filteredProducts =
+        allProducts.filter(product => {
+
+            const productName =
+                product.name.toLowerCase();
+
+            const category =
+                product.category.toLowerCase();
+
+            return (
+                productName.includes(searchText) ||
+                category.includes(searchText)
+            );
+
+        });
+
+    displayProducts(filteredProducts);
+}
+
+
+/* ==========================================
+   LOAD PRODUCTS
+========================================== */
+
+async function loadProducts() {
+    try {
+        const response = await fetch('/api/products');
+        allProducts = await response.json();
+
+        const savedSearch = localStorage.getItem("productSearch");
+
+        if (savedSearch) {
+
+            const searchInput =
+                document.getElementById("search-input");
+
+            if (searchInput) {
+                searchInput.value = savedSearch;
+            }
+
+            localStorage.removeItem("productSearch");
+
+            searchProducts();
+
+        } else {
+
+            displayProducts(allProducts);
+
+        }
+
+    } catch (error) {
+        console.error('Error loading products:', error);
+    }
+}
+
+
+/* ==========================================
+   START
+========================================== */
+
+loadProducts();
+
+</script>
+
+<script src="script.js"></script>
+
+    <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/09/06/14/20260906144717-LTFPNIA6.js" defer></script>
+    
+
+</body>
+
+</html>

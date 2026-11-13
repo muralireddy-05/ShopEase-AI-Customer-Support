@@ -1,0 +1,27 @@
+SHOPEASE CUSTOMER SUPPORT POLICY NOTES
+=======================================
+
+Returns
+-------
+The ShopEase chatbot demonstration returned a seven-day return window.
+Eligible products may be returned within 7 days according to the configured
+ShopEase return policy.
+
+Important:
+This is the policy text recorded during project testing. Before using this
+file for a live store, replace it with the exact approved policy, including
+eligibility conditions, product exclusions, refund method, pickup process,
+and return-shipping terms.
+
+Support scope
+-------------
+The chatbot is configured to answer ShopEase-related questions such as
+products, orders, delivery, payments, returns and other store support topics.
+For unrelated general questions, the tested assistant politely states that
+it only supports ShopEase-related information.
+
+Order enquiries
+---------------
+The chatbot can use the order-status integration when an order number is
+provided and the backend endpoint is configured and reachable. Do not place
+real customer personal data in sample datasets.

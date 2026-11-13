@@ -1,0 +1,15 @@
+[
+  {
+    "order_number": "SE0001",
+    "status": "processing",
+    "items": [
+      {
+        "product_name": "Wireless Headphones",
+        "quantity": 1,
+        "unit_price_inr": 1499
+      }
+    ],
+    "total_inr": 1499,
+    "data_note": "Minimal demonstration record based on the order-status chatbot test. No customer name, address, email or phone number included."
+  }
+]
